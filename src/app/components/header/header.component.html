@@ -1,0 +1,38 @@
+<header class="container-fluid">
+	<div class="container">
+		<div class="clear">
+			<div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+				<div class="logo">
+					<img src="assets/images/logo.png" />
+					<span>{{appData.name}}</span>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+				<form class="example-form">
+					<mat-form-field class="example-full-width">
+				    	<input matInput placeholder="Search" value="">
+					</mat-form-field>
+				</form>
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+				<div class="logo cart" style="float:right;">
+					<a routerLink="/cart" routerLinkActive="active">
+						<img src="assets/images/bag.png" />
+						<span>{{cart.length}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear">
+			<div>
+				<ul>
+					<li><a routerLink="" routerLinkActive="active">Home</a></li>
+					<li><a routerLink="/items/men/shirts" routerLinkActive="active">Men-Shirts</a></li>
+					<li><a routerLink="/items/men/watches" routerLinkActive="active">Men-Watches</a></li>
+					<li><a routerLink="/items/women/shirts" routerLinkActive="active">Women</a></li>
+					<li><a routerLink="/items/kids/shirts" routerLinkActive="active">Kids</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>

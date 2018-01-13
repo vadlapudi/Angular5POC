@@ -1,0 +1,184 @@
+<div class="container">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h3>Your Cart</h3>
+	</div>
+	<div>
+		<table [hidden]="cart.length == 0">
+			<tr>
+				<th></th>
+				<th>Product Name</th>
+				<th>Posted price</th>
+				<th>Sale Price</th>
+			</tr>
+			<tr *ngFor="let item of cart">
+				<td>
+					<img [src]="'/assets/images/'+item.id+'.jpg'" />
+				</td>
+				<td class="name">{{item.name}}</td>
+				<td>{{item.originalPrice | currency}}</td>
+				<td>{{item.salePrice | currency}}</td>
+			</tr>
+			<tr>
+				<th></th>
+				<th>TOTAL</th>
+				<th>{{total.oTotal | currency}}</th>
+				<th style="color:red;">{{total.sTotal | currency}}</th>
+			</tr>
+		</table>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="cart.length == 0">
+			<h2>You have saved <b>{{(total.oTotal - total.sTotal) | currency}}</b></h2>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="cart.length > 0">
+			<h4>Your cart is empty...</h4>
+		</div>
+	</div>
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h3>Shipping Details</h3>
+	</div>
+	<div class="addressWraper">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<form class="example-form">
+				<div>
+					<label>First Name</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="First Name" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Last Name</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Last Name" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Mobile</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Mobile" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Email</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Email" value="">
+					</mat-form-field>
+				</div>
+			</form>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<form class="example-form">
+				<div>
+					<label>Address 1</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Shipping Address 1" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Address 2</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Shipping Address 2" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>City</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Shipping City" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>State</label>
+					<mat-form-field>
+						<mat-select placeholder="Shipping State" value="VA">
+						    <mat-option>VA</mat-option>
+						    <mat-option>OH</mat-option>
+						    <mat-option>IN</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+				<div>
+					<label>ZIP</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Shipping ZIP" value="">
+					</mat-form-field>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h3>Payment Options</h3>
+	</div>
+	<div class="addressWraper">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<form class="example-form">
+				<div>
+					<label>Name on Card</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Name on Card" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Card Number</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Card Number" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Expiry</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Expiry (mm/yyyy)" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>CVV</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="CVV" value="">
+					</mat-form-field>
+				</div>
+			</form>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<form class="example-form">
+				<div>
+					<label>Address 1</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Billing Address 1" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>Address 2</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Billing Address 2" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>City</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Billing City" value="">
+					</mat-form-field>
+				</div>
+				<div>
+					<label>State</label>
+					<mat-form-field>
+						<mat-select placeholder="Billing State" value="VA">
+						    <mat-option>VA</mat-option>
+						    <mat-option>OH</mat-option>
+						    <mat-option>IN</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+				<div>
+					<label>ZIP</label>
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Billing ZIP" value="">
+					</mat-form-field>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 30px;">
+		<h3>Final Payment</h3>
+		<div>
+			<button mat-raised-button>Complete Payment</button>
+		</div>
+	</div>
+</div>

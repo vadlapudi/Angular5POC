@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="filter">
+		
+	</div>
+	<div class="itemsWrap">
+		<ul>
+			<li *ngFor="let item of data">
+				<div><img [src]="'/assets/images/'+item.id+'.jpg'" /></div>
+				<div>{{item.name}}</div>
+				<div class="price">{{item.originalPrice | currency}}</div>
+				<div class="price sale">Sale {{item.salePrice | currency}}</div>
+				<div>
+					<button mat-raised-button (click)="addToCart(item)">Add to Cart</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
