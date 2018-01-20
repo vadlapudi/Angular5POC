@@ -14,6 +14,10 @@ export class ItemsComponent implements OnInit {
 
 	constructor(private cs:CommonService, private route: ActivatedRoute) { }
 
+	ngOnChanges(){
+		console.log("On Changed");
+	}
+
 	ngOnInit() {
         this.route.params.subscribe(params => {
 		    this.getItems();
